@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AgrimCart - Shop Smart</title>
+  <style>
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #f1f2f6;
+      color: #333;
+    }
+
+    header {
+      background: #1a73e8;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 40px; 
+    }
+
+    header input {
+      flex: 1;
+      margin: 10px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      min-width: 200px;
+    }
+
+    .cart {
+      font-size: 18px;
+    }
+
+    nav {
+      background: white;
+      padding: 10px 20px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1a73e8;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #0d47a1;
+    }
+
+    .section {
+      padding: 20px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card h2 {
+      font-size: 18px;
+      margin: 10px;
+    }
+
+    .card p {
+      font-size: 16px;
+      color: green;
+      margin: 0 10px 10px;
+    }
+
+    .card label {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      background: #ff9f00;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card label:hover {
+      background: #fb641b;
+    }
+
+    .card input[type="checkbox"] {
+      display: none;
+    }
+
+    .card input[type="checkbox"]:checked + label {
+      background: green;
+      color: white;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      
+      <img src="https://cdn.dribbble.com/userupload/17039933/file/original-dbbc84c08bd6b4b49fc97827fa5be468.jpg?resize=1504x1128&vertical=center" alt="Logo">
+      AgrimCart
+    </div>
+    <input type="text" placeholder="Search for products...">
+    <div class="cart">🛒 Cart</div>
+  </header>
+
+  <nav>
+    <a href="#all">All</a>
+    <a href="#mobiles">Mobiles</a>
+    <a href="#electronics">Electronics</a>
+    <a href="#fashion">Fashion</a>
+    <a href="#home">Home</a>
+    <a href="#books">Books</a>
+    <a href="#appliances">Appliances</a>
+  </nav>
+
+  <div id="all" class="section">
+    <h2>All Products</h2>
+    <div class="products" id="all-products">
+      
+    </div>
+  </div>
+
+  <div id="mobiles" class="section">
+    <h2>Mobiles</h2>
+    <div class="products" id="mobiles-products">
+      
+      <div class="card">
+        <img src="https://imgs.search.brave.com/PbMwr14MSHZHZ5QjJ0OKZSV-jamW6KrpLi_INSd8BUc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXBwbGUuY29tL3Yv/aXBob25lLTE0L2kv/aW1hZ2VzL2tleS1m/ZWF0dXJlcy9mZWF0/dXJlcy9zaXplL3Np/emVfYmx1ZV9fY2U1/aWdqbXZoanVhX2xh/cmdlLmpwZw" alt="Phone 1">
+        <h2>iPhone 14</h2>
+        <p>₹70,000</p>
+        <input type="checkbox" id="cart1">
+        <label for="cart1">Add to Cart</label>
+      </div>
+      <div class="card">
+        <img src="https://imgs.search.brave.com/nFyHQ7qN53FlwPbRnYxKANQcqxwPQ-sq9k2xyjbfpF0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFtK0R5QXNNNkwu/anBn" alt="Phone 2">
+        <h2>Samsung S23</h2>
+        <p>₹60,000</p>
+        <input type="checkbox" id="cart2">
+        <label for="cart2">Add to Cart</label>
+      </div>
+      <div class="card">
+        <img src="https://imgs.search.brave.com/Wl0fOLuegOiRBmctCDGUImRyptOsg-1KdYE6kZT5wTo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bW9iaWxlZG9rYW4u/Y29tL21lZGlhL3hp/YW9taS1yZWRtaS0x/M3gtZ29sZC1vZmZp/Y2lhbC1pbWFnZS53/ZWJw" alt="Phone 3">
+        <h2>Redmi Note 13</h2>
+        <p>₹18,000</p>
+        <input type="checkbox" id="cart3">
+        <label for="cart3">Add to Cart</label>
+      </div>
+      
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/61amb0CfMGL._SX679_.jpg" alt="Phone 5">
+        <h2>OnePlus Nord CE 3</h2>
+        <p>₹25,000</p>
+        <input type="checkbox" id="cart4">
+        <label for="cart4">Add to Cart</label>
+      </div>
+    </div>
+  </div>
+
+  <div id="electronics" class="section">
+    <h2>Electronics</h2>
+    <div class="products">
+      <div class="card">
+        <img src="https://imgs.search.brave.com/jalMlT8d4yA5k41qalYUq6fMeYkKEmsoocBDZUSzytI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9zZW8vSFAt/UGF2aWxpb24tMTUt/Ni1GSEQtVG91Y2gt/SW50ZWwtQ29yZS1p/Ny0xMTY1RzctOEdC/LVJBTS01MTJHQi1T/U0QtTHVuYXItR29s/ZC1XaW5kb3dzLTEx/LTE1LWVnMDA3MHdt/X2Q0NGVlNzU5LTlh/NjYtNGI2Yy04NDVm/LWYxNDI4MGI5NmYx/NS5kZDgwMGY4NDNk/NDUyOTNhN2Y0ZTY4/NjM5MWNlOTI4ZS5q/cGVnP29kbkhlaWdo/dD01ODAmb2RuV2lk/dGg9NTgwJm9kbkJn/PUZGRkZGRg" alt="Laptop 1">
+        <h2>HP Pavilion Laptop</h2>
+        <p>₹50,000</p>
+        <input type="checkbox" id="cart5">
+        <label for="cart5">Add to Cart</label>
+      </div>
+      <div class="card">
+        <img src="https://imgs.search.brave.com/qu6I67vX10K7h9yGZ_1g5qC43D6RocSr_k3ApHLdJzs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wY291/dGxldC5jb20vd3At/Y29udGVudC91cGxv/YWRzL2xlbm92by10/aGlua3BhZC53ZWJw" alt="Laptop 2">
+        <h2>Lenovo ThinkPad</h2>
+        <p>₹60,000</p>
+        <input type="checkbox" id="cart6">
+        <label for="cart6">Add to Cart</label>
+      </div>
+      <div class="card">
+        <img src="https://imgs.search.brave.com/qHgT18iNg_0YEThaEu5xWGNNsndAZTozjdy2It4xIl8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c291bmRndXlzLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAx/OS8wNy9Cb3NlLU5v/aXNlLUNhbmNlbGxp/bmctSGVhZHBob25l/cy03MDAtNy0yLmpw/Zw" alt="Headphone 1">
+        <h2>Bose Noise Cancelling 700</h2>
+        <p>₹35,000</p>
+        <input type="checkbox" id="cart7">
+        <label for="cart7">Add to Cart</label>
+      </div>
+      <div class="card">
+        <img src="https://imgs.search.brave.com/m69HtoAzL04dSILYHR3eqFoKwyBxoP59rY3-_UOq15M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y25ldC5jb20vYS9p/bWcvcmVzaXplL2Ix/MzFhZDQzYTkxNWM5/NWE4NzQ5ZDc4MWIy/MmM5NDBhZjc1MjM4/MjgvaHViLzIwMjQv/MDkvMTIvYjgxODAz/ZDAtYmE0Yi00Mjk0/LTg1Y2QtMjMxZTE0/MjJlZjMwL2FwcGxl/LXdhdGNoLXNlcmll/cy0xMC0zOTkyLmpw/Zz9hdXRvPXdlYnAm/Zml0PWNyb3AmaGVp/Z2h0PTY3NSZ3aWR0/aD0xMjAw" alt="Smartwatch 1">
+        <h2>Apple Watch Series 7</h2>
+        <p>₹40,000</p>
+        <input type="checkbox" id="cart8">
+        <label for="cart8">Add to Cart</label>
+      </div>
+      
+    </div>
+  </div>
+
+  <div id="fashion" class="section">
+    <h2>Fashion</h2>
+    <div class="products">
+      <div class="card">
+        <img src="https://imgs.search.brave.com/y9yFPatmuQVr_bIiyvhmoiLSCJYRINUjyimpxLLebf4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFwOXFobjlYYkwu/anBn" alt="Shirt 1">
+        <h2>Casual Shirt</h2>
+        <p>₹1,500</p>
+        <input type="checkbox" id="cart9">
+        <label for="cart9">Add to Cart</label>
+      </div>
+      <div class="card">
+        <img src="https://imgs.search.brave.com/Yq1gMQOsQ-DAawtZ1y5zLE5XBCRvu9TPn4UYreTtK94/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFhNTBrNHJiekwu/anBn" alt="Shirt 2">
+        <h2>Formal Shirt</h2>
+        <p>₹2,000</p>
+        <input type="checkbox" id="cart10">
+        <label for="cart10">Add to Cart</label>
+      </div>
+      <div class="card">
+        <img src="https://imgs.search.brave.com/GIJUieP_t2n8_V-oFYgMDkXh1r4eRyrAIYtLed2M-7E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cm95YWxibHVlYXBw/YXJlbC5jb20vY2Ru/L3Nob3AvZmlsZXMv/cmVsYXhlZC1maXQt/amVhbnMtMTMxOTEw/LmpwZz92PTE3MzY1/NjMxMTcmd2lkdGg9/NTMz" alt="Jeans 1">
+        <h2>Blue Denim Jeans</h2>
+        <p>₹2,500</p>
+        <input type="checkbox" id="cart11">
+        <label for="cart11">Add to Cart</label>
+      </div>
+     
+      <div class="card">
+        <img src="https://imgs.search.brave.com/KMpHjeyNcKytO-1vQ_Y3R_Ek83izzEj6CblZk0T1cyM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAwLzgyLzg4LzY2/LzM2MF9GXzgyODg2/NjE5X2E0eGplNW9i/TTViQWFqQWpueDZa/eldiMElzNzBrU1FB/LmpwZw" alt="Shoes 1">
+        <h2>Sports Shoes</h2>
+        <p>₹1,800</p>
+        <input type="checkbox" id="cart12">
+        <label for="cart12">Add to Cart</label>
+      </div>
+      
+    </div>
+  </div>
+
+  <div id="home" class="section">
+    <h2>Home</h2>
+    <div class="products">
+      <div class="card">
+        <img src="https://imgs.search.brave.com/5EePSaAlrgcAZo95OQV89UErGhK5oGKEymdGwjE1lK0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA1LzQ2Lzc5LzMx/LzM2MF9GXzU0Njc5/MzE4Ml9LaThIbmUw/YldZTDBGaUl1aEhu/cDJsWWpjbXUyY0Rn/bS5qcGc" alt="Lamp 1">
+        <h2>Decorative Table Lamp</h2>
+        <p>₹1,500</p>
+        <input type="checkbox" id="cart13">
+        <label for="cart13">Add to Cart</label>
+      </div>
+      
+      <div class="card">
+        <img src="https://imgs.search.brave.com/Cd10WUnX8QC5Npdb5zrpnFb40BM79JgWUyk4GSubqXs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9yZXMu/Y2xvdWRpbmFyeS5j/b20vbm1nLXByb2Qv/aW1hZ2UvdXBsb2Fk/L2NfZmlsbCx3XzI0/MC9mX2F1dG8vY3Nf/c3JnYixxX2F1dG86/Z29vZC92MTcxODIx/NzE3MC9wcm9kdWN0/L25tXzQ3NDI1NTlf/MTAwMDAwX20udGlm/Zg" alt="Cushion 1">
+        <h2>Decorative Cushion</h2>
+        <p>₹700</p>
+        <input type="checkbox" id="cart14">
+        <label for="cart14">Add to Cart</label>
+      </div>
+      
+      <div class="card">
+        <img src="https://imgs.search.brave.com/v0YhBz4hV0yFFpR8MYofCi7LMSJPW7a3cPYjQpLdN7M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFRR0JFd1RLaEwu/anBn" alt="Curtain 1">
+        <h2>Blackout Curtain</h2>
+        <p>₹1,200</p>
+        <input type="checkbox" id="cart15">
+        <label for="cart15">Add to Cart</label>
+      </div>
+      <div class="card">
+        <img src="https://imgs.search.brave.com/rn2yCkeOKYPeyD2BHEUEQBpBsdrIuxk4G2XhyPezYuU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c3dhZ3NnYWxvcmUu/Y29tL2Nkbi9zaG9w/L2ZpbGVzL0VsZWdh/bmNlVm9pbGVXaGl0/ZTIuanBnP3Y9MTcx/OTQxNDc0NyZ3aWR0/aD00NjA" alt="Curtain 2">
+        <h2>Sheer Curtain</h2>
+        <p>₹800</p>
+        <input type="checkbox" id="cart16">
+        <label for="cart16">Add to Cart</label>
+      </div>
+    </div>
+  </div>
+
+  <div id="books" class="section">
+    <h2>Books</h2>
+    <div class="products">
+      <div class="card">
+        <img src="https://imgs.search.brave.com/2mz26amRNRJbEbixA4LIgYaIuMgTSCn2v51lOPJ08j8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9iYXJv/bmZpZy5jb20vY2Ru/L3Nob3AvcHJvZHVj/dHMvYXRvbWljLWhh/Yml0c19idXktdmFy/aWFudF8wMS5qcGc_/dj0xNjA5MTk3NjUw/JndpZHRoPTE0MDA" alt="Book 1">
+        <h2>Atomic Habits</h2>
+        <p>₹499</p>
+        <input type="checkbox" id="cart17">
+        <label for="cart17">Add to Cart</label>
+      </div>
+      <div class="card">
+        <img src="https://imgs.search.brave.com/gNj9NYdCkpOwaUyR5ZWXP58zxehQeHmV8MpTzuwgEwo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFpcTZoMUZFakwu/anBn" alt="Book 2">
+        <h2>The Power of Habit</h2>
+        <p>₹399</p>
+        <input type="checkbox" id="cart18">
+        <label for="cart18">Add to Cart</label>
+      </div>
+      <div class="card">
+        <img src="https://imgs.search.brave.com/60z17RU7uHGC4tQSxFbs8uckHdb6tleFk8-ilg6091c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnRo/cmlmdGJvb2tzLmNv/bS9hcGkvaW1hZ2Vo/YW5kbGVyL20vMTQ1/MUFGRTc5NEU5NzI5/NDM1QzYwREYwNjQw/MDc1NTVGMjgzN0Ux/MC5qcGVn" alt="Book 3">
+        <h2>The Alchemist</h2>
+        <p>₹250</p>
+        <input type="checkbox" id="cart19">
+        <label for="cart19">Add to Cart</label>
+      </div>
+      <div class="card">
+        <img src="https://imgs.search.brave.com/WhAqruCafpvcb-NElfwcWkV2P0mgZoi0dzuvBCWpqeE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFOQXg1cGQ2WEwu/anBn" alt="Book 4">
+        <h2>1984</h2>
+        <p>₹399</p>
+        <input type="checkbox" id="cart20">
+        <label for="cart20">Add to Cart</label>
+      </div>
+    </div>
+  </div>
+
+  <div id="appliances" class="section">
+    <h2>Appliances</h2>
+    <div class="products">
+      <div class="card">
+        <img src="https://imgs.search.brave.com/e_8OPSjFR_bLmZbuj0M6heqvvLRT1eY4UOjg0QMWnCU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTA4/NDYwMTM4NC9waG90/by9jZWlsaW5nLWZh/bi5qcGc_cz02MTJ4/NjEyJnc9MCZrPTIw/JmM9SDk5TGszcVd2/SVNqTm45OHhXME1x/c2kzQW9oUFJlWjF1/aXg0R1ZuTVoxdz0" alt="Fan 1">
+        <h2>Ceiling Fan</h2>
+        <p>₹1,200</p>
+        <input type="checkbox" id="cart21">
+        <label for="cart21">Add to Cart</label>
+      </div>
+      <div class="card">
+        <img src="https://imgs.search.brave.com/96iSRECCAuM1OgiOWecfVtJwbbMs2WFtFvX0MRX8pxI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAwLzY1LzM4LzU4/LzM2MF9GXzY1Mzg1/ODA3X0FnY2wxUlpY/elg2cEloNzQ2eTRN/ZzJ3TUJZT0FuNUVu/LmpwZw" alt="Fan 2">
+        <h2>Table Fan</h2>
+        <p>₹1,000</p>
+        <input type="checkbox" id="cart22">
+        <label for="cart22">Add to Cart</label>
+      </div>
+      <div class="card">
+        <img src="https://imgs.search.brave.com/qxmo5dgNaRZj4bJn8aOPSJJrKlxvw3iOEiBne2MDlew/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/ZHRuai5jb20vY2Ru/L3Nob3AvZmlsZXMv/SU1HXzg5NjAuanBn/P3Y9MTczNTMzODgz/MSZ3aWR0aD01MzM" alt="Mixer 1">
+        <h2>Mixer Grinder</h2>
+        <p>₹3,500</p>
+        <input type="checkbox" id="cart23">
+        <label for="cart23">Add to Cart</label>
+      </div>
+
+      <div class="card">
+        <img src="https://imgs.search.brave.com/MN0UF91QvqvFO7RX9GJGjG62_823WwdLBRzOxyZkDgs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA5Lzk5LzQ3LzA4/LzM2MF9GXzk5OTQ3/MDg2MV83akhack1U/THFtaHkyQXl5T1RK/QXZibGRwd0h5eldo/bS5qcGc" alt="Refrigerator 1">
+        <h2>Refrigerator</h2>
+        <p>₹20,000</p>
+        <input type="checkbox" id="cart24">
+        <label for="cart24">Add to Cart</label>
+      </div>
+</div>
+  <footer>
+    <strong>AgrimCart</strong> - A project by <b>Agrim Dangi - 24BCA10612</b><br>
+    Designed with ❤️ for <b>Palwinder Mam</b> | &copy; 2025
+  </footer>
+</body>
+</html>
